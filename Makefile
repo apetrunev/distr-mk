@@ -5,8 +5,6 @@ DEBIAN_VERSION:=$(shell . /etc/os-release && echo $$VERSION_CODENAME)
 # escape hash sign
 PACKAGES := $(shell sed '/^\#/d' distr.packages)
 MANUAL_PACKAGES := $(shell sed '/^\#/d' manual.packages)
-THUNAR_SENDTO_DIR := /usr/share/Thunar/sendto
-DESKTOP_ENTRIES_DIR := /usr/share/applications
 
 all: help
 
@@ -19,17 +17,6 @@ help:
 	@echo "      make sourceslist"
 	@echo "      make autoremove"
 
-thunderbird:
-	@echo "Install thunderbird-68.12"
-	test -d "/opt/thunderbird" || tar xvjf thunderbird-68.12.1.tar.bz2 -C /opt || true
-	test -f "$(DESKTOP_ENTRIES_DIR)/thunderbird.desktop" || cp -v thunderbird.desktop $(DESKTOP_ENTRIES_DIR)/thunderbird.desktop || true
-	if [ ! -f $(THUNAR_SENDTO_DIR)/thunar-sendto-email.desktop.orig ]; then \
-		cp -v $(THUNAR_SENDTO_DIR)/thunar-sendto-email.desktop $(THUNAR_SENDTO_DIR)/thunar-sendto-email.desktop.orig; \
-		cp -v thunar-sendto-email.desktop $(THUNAR_SENDTO_DIR)/; \
-	else \
-		cp -v thunar-sendto-email.desktop $(THUNAR_SENDTO_DIR)/; \
-	fi || true
-		
 office:
 	./office.mk install
 
@@ -130,7 +117,7 @@ autoremove:
 	@echo "Delete unused packages"
 	@apt-get -y autoremove || true
 
-distr: packages x11vnc cups-browsed thunderbird office autoremove  
+distr: packages x11vnc cups-browsed office autoremove  
 
 ldap_auth:
 	apt-get -y install libpam-ldapd || true
@@ -138,5 +125,5 @@ ldap_auth:
 	@$(call enablePAM_MKHOMEDIR)
 	@$(call enablePAM_UMASK)
 
-ldap_distr: packages ldap_auth x11vnc cups-browsed thunderbird office autoremove 
+ldap_distr: packages ldap_auth x11vnc cups-browsed office autoremove 
 	
