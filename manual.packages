@@ -1,0 +1,19 @@
+# The packages are marked manual
+# to prevent these from autoremove
+lightdm
+lightdm-gtk-greeter
+fonts-crosextra-caladea
+fonts-crosextra-carlito
+fonts-dejavu
+fonts-font-awesome
+fonts-lato
+fonts-liberation2
+fonts-linuxlibertine
+fonts-noto-core
+fonts-noto-ui-core
+fonts-opensymbol
+fonts-roboto-slab
+fonts-sil-gentium
+fonts-sil-gentium-basic
+gnome-keyring
+libpam-gnome-keyring
