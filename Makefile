@@ -37,10 +37,9 @@ sourceslist:
 	echo "Copy sources list to /etc/apt"
 	test -f /etc/apt/sources.list && mv /etc/apt/sources.list /etc/apt/sources.list.old || true
 	cp $(DEBIAN_VERSION).sources.list /etc/apt/sources.list
-	dpkg --add-architecture i386
-	apt-get update
 	apt-get -y install curl wget apt-transport-https dirmngr || true
 	wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+	dpkg --add-architecture i386
 	apt-get update
 
 define enablePAM_UMASK
