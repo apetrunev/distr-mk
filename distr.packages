@@ -47,6 +47,11 @@ cifs-utils
 gxneur
 astyle
 # For Browse Network
+gvfs
 gvfs-backends
+gvfs-common
+gvfs-daemons
+gvfs-fuse
+gvfs-libs
 gvfs-bin
 lshw
