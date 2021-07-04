@@ -1,0 +1,4 @@
+# Libreoffice 7.1.0.3
+LIBRE7.1:=https://downloadarchive.documentfoundation.org/libreoffice/old/7.1.3.2/deb/x86_64/LibreOffice_7.1.3.2_Linux_x86-64_deb.tar.gz
+LIBRE7.1_LANG:=https://downloadarchive.documentfoundation.org/libreoffice/old/7.1.3.2/deb/x86_64/LibreOffice_7.1.3.2_Linux_x86-64_deb_langpack_ru.tar.gz
+LIBRE7.1_HELP:=https://downloadarchive.documentfoundation.org/libreoffice/old/7.1.3.2/deb/x86_64/LibreOffice_7.1.3.2_Linux_x86-64_deb_helppack_ru.tar.gz
