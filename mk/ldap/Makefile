@@ -1,5 +1,5 @@
 DEBIAN_VERSION := $(shell . /etc/os-release && echo $$VERSION_CODENAME)
-PAM_D:=/etc/pam.d
+PAM_D := /etc/pam.d
 PAM_UMASK := pam_umask.so
 PAM_MKHOMEDIR := pam_mkhomedir.so
 
